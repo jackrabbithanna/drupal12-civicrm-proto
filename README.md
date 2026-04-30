@@ -34,3 +34,5 @@ https://github.com/jackrabbithanna/composer-compile-lib/tree/drupal12-proto1
 
 - Allows Symfony 8
 
+https://github.com/civicrm/composer-compile-lib/pull/10
+
