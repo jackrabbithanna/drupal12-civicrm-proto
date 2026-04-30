@@ -400,12 +400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackrabbithanna/civicrm-core.git",
-                "reference": "3d59d0a1e00ea087661e12b668a8b504d84cd8d7"
+                "reference": "52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-core/zipball/3d59d0a1e00ea087661e12b668a8b504d84cd8d7",
-                "reference": "3d59d0a1e00ea087661e12b668a8b504d84cd8d7",
+                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-core/zipball/52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec",
+                "reference": "52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec",
                 "shasum": ""
             },
             "require": {
@@ -933,7 +933,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-04-30T14:31:55+00:00"
+            "time": "2026-04-30T17:41:32+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
