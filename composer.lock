@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c054cc7f08256f565dfd85cb08daf8f",
+    "content-hash": "7adbdb1ea2b2251ac13782f28fcc747b",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -1056,6 +1056,72 @@
                 }
             ],
             "time": "2026-05-01T15:55:24+00:00"
+        },
+        {
+            "name": "civicrm/civicrm-extension-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Skvare/civicrm-extension-plugin.git",
+                "reference": "9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Skvare/civicrm-extension-plugin/zipball/9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78",
+                "reference": "9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 | ^2.0",
+                "pear/archive_tar": "^1.4",
+                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^6 || ^7 || ^8",
+                "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^6 || ^7 || ^8"
+            },
+            "default-branch": true,
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Civi\\CivicrmExtensionPlugin\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Civi\\CivicrmExtensionPlugin\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Skvare",
+                    "email": "info@skvare.com",
+                    "homepage": "https://skvare.com",
+                    "role": "Sponsor"
+                },
+                {
+                    "name": "Mark Hanna",
+                    "email": "mark@skvare.com",
+                    "homepage": "https://github.com/jackrabbithanna",
+                    "role": "Software Architect"
+                },
+                {
+                    "name": "Sunil Pawar",
+                    "email": "sunil@skvare.com",
+                    "homepage": "https://github.com/sunilpawar",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A composer plugin to assist with installing CiviCRM Extensions.",
+            "homepage": "https://skvare.com",
+            "keywords": [
+                "civicrm",
+                "extension",
+                "plugin"
+            ],
+            "support": {
+                "source": "https://github.com/Skvare/civicrm-extension-plugin/tree/master",
+                "issues": "https://github.com/Skvare/civicrm-extension-plugin/issues"
+            },
+            "time": "2026-05-01T16:30:02+00:00"
         },
         {
             "name": "civicrm/civicrm-packages",
@@ -16395,6 +16461,7 @@
     "stability-flags": {
         "civicrm/civicrm-core": 20,
         "civicrm/civicrm-drupal-8": 20,
+        "civicrm/civicrm-extension-plugin": 20,
         "civicrm/composer-compile-lib": 20,
         "drupal/civicrm_drush": 15,
         "drupal/core": 20,

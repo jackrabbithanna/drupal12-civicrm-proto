@@ -26,6 +26,10 @@
             "url": "https://github.com/drush-ops/drush.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/Skvare/civicrm-extension-plugin.git"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -33,6 +37,7 @@
     "require": {
         "civicrm/civicrm-core": "dev-drupal12-proto1 as dev-master",
         "civicrm/civicrm-drupal-8": "dev-drupal12-proto1",
+        "civicrm/civicrm-extension-plugin": "dev-master",
         "civicrm/civicrm-packages": "6.13.*",
         "civicrm/composer-compile-lib": "dev-drupal12-proto1 as v0.23",
         "composer/installers": "^2.3",
@@ -53,6 +58,7 @@
     "config": {
         "allow-plugins": {
             "civicrm/civicrm-asset-plugin": true,
+            "civicrm/civicrm-extension-plugin": true,
             "civicrm/composer-compile-plugin": true,
             "civicrm/composer-downloads-plugin": true,
             "composer/installers": true,
@@ -105,6 +111,17 @@
             "recipes/{$name}": [
                 "type:drupal-recipe"
             ]
+        },
+        "civicrm": {
+            "extensions_install_path": "./web/sites/default/files/civicrm/ext",
+            "extensions": {
+                "uk.co.vedaconsulting.mosaico": {
+                    "url": "https://download.civicrm.org/extension/uk.co.vedaconsulting.mosaico/3.12.1773937815/uk.co.vedaconsulting.mosaico-3.12.1773937815.zip"
+                },
+                "contactlayout": {
+                    "url": "https://lab.civicrm.org/extensions/contactlayout/-/archive/3.0.4/contactlayout-3.0.4.zip"
+                }
+            }
         },
         "drupal-core-project-message": {
             "include-keys": [
