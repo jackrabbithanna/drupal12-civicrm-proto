@@ -42,6 +42,7 @@
         "civicrm/composer-compile-lib": "dev-drupal12-proto1 as v0.23",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
+        "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
         "drupal/core": "12.x-dev",
         "drupal/core-composer-scaffold": "12.x-dev",
         "drupal/core-dev": "12.x-dev",

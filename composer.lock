@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7adbdb1ea2b2251ac13782f28fcc747b",
+    "content-hash": "bc703b34a53161941c34065400366252",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -3316,6 +3316,48 @@
                 "source": "https://github.com/skvare/civicrm_drush",
                 "error": "Invalid dependency: \"civicrm\" is an unknown drupal 8 package name",
                 "issues": "https://github.com/skvare/civicrm_drush"
+            }
+        },
+        {
+            "name": "drupal/civicrm_form_builder_blocks",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/civicrm_form_builder_blocks.git",
+                "reference": "44ac3fc44750f27a110003993fa552d480a58512"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.0+1-dev",
+                    "datestamp": "1777653985",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "markusa",
+                    "homepage": "https://www.drupal.org/user/142798"
+                }
+            ],
+            "description": "Render CiviCRM Afforms in Drupal blocks",
+            "homepage": "https://www.drupal.org/project/civicrm_form_builder_blocks",
+            "support": {
+                "source": "https://git.drupalcode.org/project/civicrm_form_builder_blocks",
+                "error": "Invalid dependency: \"civicrm\" is an unknown drupal 8 package name"
             }
         },
         {
@@ -16464,6 +16506,7 @@
         "civicrm/civicrm-extension-plugin": 20,
         "civicrm/composer-compile-lib": 20,
         "drupal/civicrm_drush": 15,
+        "drupal/civicrm_form_builder_blocks": 20,
         "drupal/core": 20,
         "drupal/core-composer-scaffold": 20,
         "drupal/core-dev": 20,
