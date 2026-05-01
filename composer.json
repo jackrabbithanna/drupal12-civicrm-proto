@@ -30,6 +30,10 @@
             "url": "https://github.com/Skvare/civicrm-extension-plugin.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/jackrabbithanna/civicrm_entity.git"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -42,6 +46,7 @@
         "civicrm/composer-compile-lib": "dev-drupal12-proto1 as v0.23",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
+        "drupal/civicrm_entity": "dev-d12-info",
         "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
         "drupal/core": "12.x-dev",
         "drupal/core-composer-scaffold": "12.x-dev",
@@ -123,6 +128,8 @@
                     "url": "https://lab.civicrm.org/extensions/contactlayout/-/archive/3.0.4/contactlayout-3.0.4.zip"
                 }
             }
+        },
+        "patches": {
         },
         "drupal-core-project-message": {
             "include-keys": [

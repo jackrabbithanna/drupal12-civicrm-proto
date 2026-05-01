@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc703b34a53161941c34065400366252",
+    "content-hash": "4a47a30b287639d0f2e7f0f1cbbc11f7",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -3317,6 +3317,38 @@
                 "error": "Invalid dependency: \"civicrm\" is an unknown drupal 8 package name",
                 "issues": "https://github.com/skvare/civicrm_drush"
             }
+        },
+        {
+            "name": "drupal/civicrm_entity",
+            "version": "dev-d12-info",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jackrabbithanna/civicrm_entity.git",
+                "reference": "f02f3df80aec0c8c3f424a411fb20779d3c89841"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jackrabbithanna/civicrm_entity/zipball/f02f3df80aec0c8c3f424a411fb20779d3c89841",
+                "reference": "f02f3df80aec0c8c3f424a411fb20779d3c89841",
+                "shasum": ""
+            },
+            "require": {
+                "civicrm/civicrm-drupal-8": "*",
+                "drupal/core": "^10.1 || ^11 || ^12"
+            },
+            "require-dev": {
+                "drupal/fullcalendar_view": "^5.0"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Expose CiviCRM entities as Drupal entities.",
+            "homepage": "http://drupal.org/project/civicrm_entity",
+            "support": {
+                "source": "https://github.com/jackrabbithanna/civicrm_entity/tree/d12-info"
+            },
+            "time": "2026-05-01T18:22:43+00:00"
         },
         {
             "name": "drupal/civicrm_form_builder_blocks",
@@ -16506,6 +16538,7 @@
         "civicrm/civicrm-extension-plugin": 20,
         "civicrm/composer-compile-lib": 20,
         "drupal/civicrm_drush": 15,
+        "drupal/civicrm_entity": 20,
         "drupal/civicrm_form_builder_blocks": 20,
         "drupal/core": 20,
         "drupal/core-composer-scaffold": 20,
