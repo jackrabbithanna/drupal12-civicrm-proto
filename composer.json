@@ -48,6 +48,7 @@
         "drupal/civicrm_drush": "^5.0@alpha",
         "drupal/civicrm_entity": "dev-d12-info",
         "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
+        "drupal/civicrm_reroute_mail": "1.0.x-dev",
         "drupal/core": "12.x-dev",
         "drupal/core-composer-scaffold": "12.x-dev",
         "drupal/core-dev": "12.x-dev",
