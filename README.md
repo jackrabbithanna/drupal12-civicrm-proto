@@ -10,8 +10,6 @@ composer install
 
 ### civicrm-core
 
-https://github.com/jackrabbithanna/civicrm-core/tree/drupal12-proto1
-
 - Allows Symfony 8
 - Allows pontedilana/php-weasyprint 2.x
 
@@ -21,6 +19,7 @@ https://github.com/civicrm/civicrm-core/pull/35570
 
 https://github.com/civicrm/civicrm-core/pull/35571
 
+All MRs are merged, using official dev-master now.
 
 ### civicrm-drupal-8
 
