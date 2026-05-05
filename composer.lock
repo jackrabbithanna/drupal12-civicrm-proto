@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "923e481dbb8ac83dcfa7aade8d0adf7e",
+    "content-hash": "b919dcbd9738ee136106a22920d6fa27",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -458,16 +458,16 @@
         },
         {
             "name": "civicrm/civicrm-core",
-            "version": "dev-drupal12-proto1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jackrabbithanna/civicrm-core.git",
-                "reference": "52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec"
+                "url": "https://github.com/civicrm/civicrm-core.git",
+                "reference": "fd7948afde2037ad5eaae7dfacf34dc8a6a974a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-core/zipball/52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec",
-                "reference": "52ffe132cdad4035b2ce3ceb3f4a899a3e4925ec",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/fd7948afde2037ad5eaae7dfacf34dc8a6a974a4",
+                "reference": "fd7948afde2037ad5eaae7dfacf34dc8a6a974a4",
                 "shasum": ""
             },
             "require": {
@@ -540,6 +540,7 @@
                 "zetacomponents/base": "1.9.*",
                 "zetacomponents/mail": "~1.9.4"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "downloads": {
@@ -987,7 +988,7 @@
             ],
             "description": "Open source constituent relationship management for non-profits, NGOs and advocacy organizations.",
             "support": {
-                "source": "https://github.com/jackrabbithanna/civicrm-core/tree/drupal12-proto1"
+                "source": "https://github.com/civicrm/civicrm-core/tree/master"
             },
             "funding": [
                 {
@@ -995,7 +996,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-04-30T17:41:32+00:00"
+            "time": "2026-05-05T13:10:47+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -1063,12 +1064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Skvare/civicrm-extension-plugin.git",
-                "reference": "9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78"
+                "reference": "3be3c5f73d2dcad71f4b760b30006971a6c93a27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Skvare/civicrm-extension-plugin/zipball/9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78",
-                "reference": "9d851d7adc8bd1a218c2f5b1254bda4efd6b8b78",
+                "url": "https://api.github.com/repos/Skvare/civicrm-extension-plugin/zipball/3be3c5f73d2dcad71f4b760b30006971a6c93a27",
+                "reference": "3be3c5f73d2dcad71f4b760b30006971a6c93a27",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1122,7 @@
                 "source": "https://github.com/Skvare/civicrm-extension-plugin/tree/master",
                 "issues": "https://github.com/Skvare/civicrm-extension-plugin/issues"
             },
-            "time": "2026-05-01T16:30:02+00:00"
+            "time": "2026-05-04T14:59:05+00:00"
         },
         {
             "name": "civicrm/civicrm-packages",
@@ -1506,16 +1507,16 @@
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.7.2",
+            "version": "1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/class-map-generator.git",
-                "reference": "6a9c2f0970022ab00dc58c07d0685dd712f2231b"
+                "reference": "86d8208fc3c649a3a999daf1a63c25201be2990f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/6a9c2f0970022ab00dc58c07d0685dd712f2231b",
-                "reference": "6a9c2f0970022ab00dc58c07d0685dd712f2231b",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/86d8208fc3c649a3a999daf1a63c25201be2990f",
+                "reference": "86d8208fc3c649a3a999daf1a63c25201be2990f",
                 "shasum": ""
             },
             "require": {
@@ -1559,7 +1560,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/class-map-generator/issues",
-                "source": "https://github.com/composer/class-map-generator/tree/1.7.2"
+                "source": "https://github.com/composer/class-map-generator/tree/1.7.3"
             },
             "funding": [
                 {
@@ -1571,7 +1572,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-30T15:36:56+00:00"
+            "time": "2026-05-05T09:17:07+00:00"
         },
         {
             "name": "composer/composer",
@@ -3495,12 +3496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "185b3737e39c9a475ee9cfeff89ffdf55d142612"
+                "reference": "73b371b2780159667bbc25839d1e0a2757ab99af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/185b3737e39c9a475ee9cfeff89ffdf55d142612",
-                "reference": "185b3737e39c9a475ee9cfeff89ffdf55d142612",
+                "url": "https://api.github.com/repos/drupal/core/zipball/73b371b2780159667bbc25839d1e0a2757ab99af",
+                "reference": "73b371b2780159667bbc25839d1e0a2757ab99af",
                 "shasum": ""
             },
             "require": {
@@ -3666,7 +3667,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-05-01T15:17:33+00:00"
+            "time": "2026-05-05T14:31:11+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -16564,12 +16565,6 @@
     ],
     "packages-dev": [],
     "aliases": [
-        {
-            "package": "civicrm/civicrm-core",
-            "version": "dev-drupal12-proto1",
-            "alias": "dev-master",
-            "alias_normalized": "dev-master"
-        },
         {
             "package": "civicrm/composer-compile-lib",
             "version": "dev-drupal12-proto1",

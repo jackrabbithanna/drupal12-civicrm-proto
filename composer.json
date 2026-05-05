@@ -15,7 +15,7 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/jackrabbithanna/civicrm-core.git"
+            "url": "https://github.com/civicrm/civicrm-core.git"
         },
         {
             "type": "vcs",
@@ -39,7 +39,7 @@
         }
     ],
     "require": {
-        "civicrm/civicrm-core": "dev-drupal12-proto1 as dev-master",
+        "civicrm/civicrm-core": "dev-master",
         "civicrm/civicrm-drupal-8": "dev-drupal12-proto1",
         "civicrm/civicrm-extension-plugin": "dev-master",
         "civicrm/civicrm-packages": "6.13.*",
