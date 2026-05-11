@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-core.git",
-                "reference": "0f9492a1def44426c098c9d319235ac120551c1a"
+                "reference": "ee96edec78ccbf2697a99a6b112332d69d311de1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/0f9492a1def44426c098c9d319235ac120551c1a",
-                "reference": "0f9492a1def44426c098c9d319235ac120551c1a",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/ee96edec78ccbf2697a99a6b112332d69d311de1",
+                "reference": "ee96edec78ccbf2697a99a6b112332d69d311de1",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-05-08T13:39:23+00:00"
+            "time": "2026-05-11T21:54:47+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -1004,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackrabbithanna/civicrm-drupal-8.git",
-                "reference": "1874094c030580013c10fa20a13f841a6d13debf"
+                "reference": "9b2a7ed567d0a626669b7f57d7666f2cbf3b914b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-drupal-8/zipball/1874094c030580013c10fa20a13f841a6d13debf",
-                "reference": "1874094c030580013c10fa20a13f841a6d13debf",
+                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-drupal-8/zipball/9b2a7ed567d0a626669b7f57d7666f2cbf3b914b",
+                "reference": "9b2a7ed567d0a626669b7f57d7666f2cbf3b914b",
                 "shasum": ""
             },
             "require": {
@@ -1056,7 +1056,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-05-01T15:55:24+00:00"
+            "time": "2026-05-11T22:45:41+00:00"
         },
         {
             "name": "civicrm/civicrm-extension-plugin",
@@ -3496,12 +3496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "d36eedd0a4a31f3b06420aa03c2281bb9fbe4517"
+                "reference": "eb18a5e84d8122b27eafa181b79fa0434dcf926b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/d36eedd0a4a31f3b06420aa03c2281bb9fbe4517",
-                "reference": "d36eedd0a4a31f3b06420aa03c2281bb9fbe4517",
+                "url": "https://api.github.com/repos/drupal/core/zipball/eb18a5e84d8122b27eafa181b79fa0434dcf926b",
+                "reference": "eb18a5e84d8122b27eafa181b79fa0434dcf926b",
                 "shasum": ""
             },
             "require": {
@@ -3668,7 +3668,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-05-11T11:16:12+00:00"
+            "time": "2026-05-11T21:34:16+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
