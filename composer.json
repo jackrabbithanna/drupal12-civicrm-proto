@@ -19,10 +19,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/jackrabbithanna/composer-compile-lib.git"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/drush-ops/drush.git"
         },
         {
@@ -43,7 +39,7 @@
         "civicrm/civicrm-drupal-8": "dev-drupal12-proto1",
         "civicrm/civicrm-extension-plugin": "dev-master",
         "civicrm/civicrm-packages": "6.13.*",
-        "civicrm/composer-compile-lib": "dev-drupal12-proto1 as v0.23",
+        "civicrm/composer-compile-lib": "dev-master as v0.23",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
         "drupal/civicrm_entity": "dev-d12-info",

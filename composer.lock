@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b919dcbd9738ee136106a22920d6fa27",
+    "content-hash": "74db49b40c09eb1f1d24d5ff93a18501",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-core.git",
-                "reference": "ee96edec78ccbf2697a99a6b112332d69d311de1"
+                "reference": "92406f0e9ca397b09e06328b288c35033ca8aae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/ee96edec78ccbf2697a99a6b112332d69d311de1",
-                "reference": "ee96edec78ccbf2697a99a6b112332d69d311de1",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/92406f0e9ca397b09e06328b288c35033ca8aae3",
+                "reference": "92406f0e9ca397b09e06328b288c35033ca8aae3",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-05-11T21:54:47+00:00"
+            "time": "2026-05-12T14:18:03+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -1148,16 +1148,16 @@
         },
         {
             "name": "civicrm/composer-compile-lib",
-            "version": "dev-drupal12-proto1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jackrabbithanna/composer-compile-lib.git",
-                "reference": "0e3ce8ea096181b21e796d0eff8c9fcf61fcacf8"
+                "url": "https://github.com/civicrm/composer-compile-lib.git",
+                "reference": "6d96a49f50c4ab2e52d0f549272e7861a61d5ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/composer-compile-lib/zipball/0e3ce8ea096181b21e796d0eff8c9fcf61fcacf8",
-                "reference": "0e3ce8ea096181b21e796d0eff8c9fcf61fcacf8",
+                "url": "https://api.github.com/repos/civicrm/composer-compile-lib/zipball/6d96a49f50c4ab2e52d0f549272e7861a61d5ad0",
+                "reference": "6d96a49f50c4ab2e52d0f549272e7861a61d5ad0",
                 "shasum": ""
             },
             "require": {
@@ -1167,14 +1167,15 @@
                 "symfony/filesystem": "~2.8 || ~3.4 || ~4.0 || ~5.0 || ~6.0 || ~7.0 || ~8.0",
                 "tubalmartin/cssmin": "^4.1"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "compile": [
                     {
-                        "title": "Generate <comment>CCL</comment> wrapper functions",
                         "run": [
                             "@php-method \\CCL\\Tasks::template"
                         ],
+                        "title": "Generate <comment>CCL</comment> wrapper functions",
                         "tpl-file": "src/StubsTpl.php",
                         "tpl-items": {
                             "CCL.php": true
@@ -1196,6 +1197,7 @@
                     ]
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1207,9 +1209,10 @@
             ],
             "description": "Small library of compilation helpers",
             "support": {
-                "source": "https://github.com/jackrabbithanna/composer-compile-lib/tree/drupal12-proto1"
+                "issues": "https://github.com/civicrm/composer-compile-lib/issues",
+                "source": "https://github.com/civicrm/composer-compile-lib/tree/master"
             },
-            "time": "2026-04-30T14:36:24+00:00"
+            "time": "2026-05-11T22:58:51+00:00"
         },
         {
             "name": "civicrm/composer-compile-plugin",
@@ -3496,12 +3499,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "eb18a5e84d8122b27eafa181b79fa0434dcf926b"
+                "reference": "507cfd0e5829343f1aa158efaaa32a07b940684a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/eb18a5e84d8122b27eafa181b79fa0434dcf926b",
-                "reference": "eb18a5e84d8122b27eafa181b79fa0434dcf926b",
+                "url": "https://api.github.com/repos/drupal/core/zipball/507cfd0e5829343f1aa158efaaa32a07b940684a",
+                "reference": "507cfd0e5829343f1aa158efaaa32a07b940684a",
                 "shasum": ""
             },
             "require": {
@@ -3668,7 +3671,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-05-11T21:34:16+00:00"
+            "time": "2026-05-12T09:30:08+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -3969,12 +3972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "0751821244dd6db3265388cabbbab6fece563c52"
+                "reference": "cdbd203c61f7d01ba653e7137aca3d7529ffec60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/0751821244dd6db3265388cabbbab6fece563c52",
-                "reference": "0751821244dd6db3265388cabbbab6fece563c52",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/cdbd203c61f7d01ba653e7137aca3d7529ffec60",
+                "reference": "cdbd203c61f7d01ba653e7137aca3d7529ffec60",
                 "shasum": ""
             },
             "require": {
@@ -4167,7 +4170,7 @@
                     "url": "https://github.com/weitzman"
                 }
             ],
-            "time": "2026-05-11T10:47:36+00:00"
+            "time": "2026-05-12T11:57:34+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -16652,7 +16655,7 @@
     "aliases": [
         {
             "package": "civicrm/composer-compile-lib",
-            "version": "dev-drupal12-proto1",
+            "version": "9999999-dev",
             "alias": "v0.23",
             "alias_normalized": "0.23.0.0"
         }
