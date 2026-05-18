@@ -25,7 +25,13 @@ All MRs are merged, using official dev-master now.
 
 https://github.com/jackrabbithanna/civicrm-drupal-8/tree/drupal12-proto1
 
-https://github.com/civicrm/civicrm-drupal-8/pull/126
+https://github.com/civicrm/civicrm-drupal-8/pull/127
+
+Merged !!
+
+Repo updated to use official civicrm repo.
+
+
 
 ### civicrm/composer-compile-lib
 

@@ -11,7 +11,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/jackrabbithanna/civicrm-drupal-8.git"
+            "url": "https://github.com/civicrm/civicrm-drupal-8.git"
         },
         {
             "type": "vcs",
@@ -36,9 +36,9 @@
     ],
     "require": {
         "civicrm/civicrm-core": "dev-master",
-        "civicrm/civicrm-drupal-8": "dev-drupal12-proto1",
+        "civicrm/civicrm-drupal-8": "dev-master",
         "civicrm/civicrm-extension-plugin": "dev-master",
-        "civicrm/civicrm-packages": "6.13.*",
+        "civicrm/civicrm-packages": "dev-master",
         "civicrm/composer-compile-lib": "dev-master as v0.23",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
