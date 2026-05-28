@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba085f4dc3215a39893b9f20ea21ab97",
+    "content-hash": "934986b0bc7b0f23cd5a69deb71543d3",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-core.git",
-                "reference": "4397406ef4ff89462f9753863c473813cf612dcf"
+                "reference": "d81e7f2b42d49c4c61197b820c9469e34cf32620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/4397406ef4ff89462f9753863c473813cf612dcf",
-                "reference": "4397406ef4ff89462f9753863c473813cf612dcf",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/d81e7f2b42d49c4c61197b820c9469e34cf32620",
+                "reference": "d81e7f2b42d49c4c61197b820c9469e34cf32620",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-05-28T16:00:37+00:00"
+            "time": "2026-05-28T19:20:34+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -3325,35 +3325,73 @@
         },
         {
             "name": "drupal/civicrm_entity",
-            "version": "dev-d12-info",
+            "version": "dev-5.0.x",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jackrabbithanna/civicrm_entity.git",
-                "reference": "f02f3df80aec0c8c3f424a411fb20779d3c89841"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/civicrm_entity/zipball/f02f3df80aec0c8c3f424a411fb20779d3c89841",
-                "reference": "f02f3df80aec0c8c3f424a411fb20779d3c89841",
-                "shasum": ""
+                "url": "https://git.drupalcode.org/project/civicrm_entity.git",
+                "reference": "6ded38dce12e3369d232143c0490cb9639b0b89e"
             },
             "require": {
                 "civicrm/civicrm-drupal-8": "*",
-                "drupal/core": "^10.1 || ^11 || ^12"
+                "drupal/core": "^11.3 || ^12"
             },
             "require-dev": {
-                "drupal/fullcalendar_view": "^5.0"
+                "drupal/fullcalendar_view": "^5.2"
             },
             "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-5.0.x": "5.0.x-dev"
+                },
+                "drupal": {
+                    "version": "5.0.x-dev",
+                    "datestamp": "1779997599",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dsdeiz",
+                    "homepage": "https://www.drupal.org/user/447770"
+                },
+                {
+                    "name": "eileenmcnaughton",
+                    "homepage": "https://www.drupal.org/user/249551"
+                },
+                {
+                    "name": "jitendrapurohit",
+                    "homepage": "https://www.drupal.org/user/2810707"
+                },
+                {
+                    "name": "markusa",
+                    "homepage": "https://www.drupal.org/user/142798"
+                },
+                {
+                    "name": "mglaman",
+                    "homepage": "https://www.drupal.org/user/2416470"
+                },
+                {
+                    "name": "seamus_lee",
+                    "homepage": "https://www.drupal.org/user/2576212"
+                },
+                {
+                    "name": "sunilpawar",
+                    "homepage": "https://www.drupal.org/user/1205442"
+                }
             ],
             "description": "Expose CiviCRM entities as Drupal entities.",
             "homepage": "http://drupal.org/project/civicrm_entity",
             "support": {
-                "source": "https://github.com/jackrabbithanna/civicrm_entity/tree/d12-info"
-            },
-            "time": "2026-05-01T18:22:43+00:00"
+                "source": "https://git.drupalcode.org/project/civicrm_entity",
+                "error": "Invalid dependency: \"civicrm\" is an unknown drupal 8 package name"
+            }
         },
         {
             "name": "drupal/civicrm_form_builder_blocks",
