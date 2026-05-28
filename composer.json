@@ -39,7 +39,7 @@
         "civicrm/civicrm-drupal-8": "dev-master",
         "civicrm/civicrm-extension-plugin": "dev-master",
         "civicrm/civicrm-packages": "dev-master",
-        "civicrm/composer-compile-lib": "dev-master as v0.23",
+        "civicrm/composer-compile-lib": "^0.9",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
         "drupal/civicrm_entity": "dev-d12-info",
