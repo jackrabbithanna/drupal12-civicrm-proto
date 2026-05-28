@@ -3329,7 +3329,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/civicrm_entity.git",
-                "reference": "6ded38dce12e3369d232143c0490cb9639b0b89e"
+                "reference": "ac6158c658d8893fbe5ceb659d36d17eaf6a0af2"
             },
             "require": {
                 "civicrm/civicrm-drupal-8": "*",
@@ -3345,7 +3345,7 @@
                 },
                 "drupal": {
                     "version": "5.0.x-dev",
-                    "datestamp": "1779997599",
+                    "datestamp": "1780002393",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
