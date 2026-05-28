@@ -41,6 +41,8 @@ https://github.com/jackrabbithanna/composer-compile-lib/tree/drupal12-proto1
 
 https://github.com/civicrm/composer-compile-lib/pull/10
 
+MERGED - using offical tag now
+
 ## civicrm_drush
 
 Created and started using 5.0.x branch, with Drush 14
@@ -51,10 +53,5 @@ Created and started using 5.0.x branch, with Drush 14
 
 ## civicrm_entity
 
-Temporary fork: https://github.com/jackrabbithanna/civicrm_entity/blob/d12-info
-
-Combines: https://github.com/eileenmcnaughton/civicrm_entity/pull/549
-
-With additional changes for D12. Final branch TBD
-
+Using 5.0.x-dev branch of CE
 
