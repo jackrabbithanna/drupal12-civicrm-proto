@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackrabbithanna/civicrm-core.git",
-                "reference": "1bc0cd9e451a65858f54c346da67395fe41c99ff"
+                "reference": "1b0af41095968bf1fa92d10784e65293960b6157"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-core/zipball/1bc0cd9e451a65858f54c346da67395fe41c99ff",
-                "reference": "1bc0cd9e451a65858f54c346da67395fe41c99ff",
+                "url": "https://api.github.com/repos/jackrabbithanna/civicrm-core/zipball/1b0af41095968bf1fa92d10784e65293960b6157",
+                "reference": "1b0af41095968bf1fa92d10784e65293960b6157",
                 "shasum": ""
             },
             "require": {
@@ -1008,7 +1008,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-08-25T15:48:12+00:00"
+            "time": "2026-08-25T16:46:11+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -3542,12 +3542,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "53e2dd56c97a62e86a7aa6c967329340bf85d4d6"
+                "reference": "5dc7454e7a5feacad542533dc4a018f2ddd09190"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/53e2dd56c97a62e86a7aa6c967329340bf85d4d6",
-                "reference": "53e2dd56c97a62e86a7aa6c967329340bf85d4d6",
+                "url": "https://api.github.com/repos/drupal/core/zipball/5dc7454e7a5feacad542533dc4a018f2ddd09190",
+                "reference": "5dc7454e7a5feacad542533dc4a018f2ddd09190",
                 "shasum": ""
             },
             "require": {
@@ -3718,7 +3718,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-08-25T14:55:18+00:00"
+            "time": "2026-08-25T16:02:17+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
