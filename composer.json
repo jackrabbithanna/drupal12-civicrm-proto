@@ -30,6 +30,10 @@
             "url": "https://github.com/thephpleague/oauth2-client.git"
         },
         {
+            "type": "vcs",
+            "url": "git@git.drupal.org:project/civicrm_entity.git"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -42,7 +46,7 @@
         "civicrm/composer-compile-lib": "^0.9",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
-        "drupal/civicrm_entity": "5.0.x-dev",
+        "drupal/civicrm_entity": "api3-to-api4-dev",
         "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
         "drupal/civicrm_reroute_mail": "1.0.x-dev",
         "drupal/core": "12.x-dev",
@@ -51,6 +55,7 @@
         "drupal/core-project-message": "12.x-dev",
         "drupal/core-recipe-unpack": "12.x-dev",
         "drupal/core-recommended": "12.x-dev",
+        "drupal/text_with_summary": "^1.0",
         "drush/drush": "14.x-dev",
         "league/oauth2-client": "dev-master as 2.9.0",
         "mglaman/composer-drupal-lenient": "^2.0"
@@ -136,6 +141,12 @@
             }
         },
         "patches": {
+            "civicrm/civicrm-core": {
+                "Improve Drupal cache invalidation after CiviCRM flush": "patches/civicrm-core-drupal-cache-invalidation.patch"
+            },
+            "civicrm/civicrm-drupal-8": {
+                "Add targeted Drupal cache invalidation for CiviCRM": "patches/civicrm-drupal-8-cache-invalidator.patch"
+            }
         },
         "drupal-lenient": {
             "allowed-list": []

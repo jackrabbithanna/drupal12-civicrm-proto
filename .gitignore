@@ -90,3 +90,9 @@ Vagrantfile.local
 # Claude files
 .claude/settings.local.json
 .claude/commands/contrib/
+
+# Local PHPUnit configuration: contains the database password.
+/phpunit.xml
+/.phpunit.result.cache
+# Derived by run-tests.sh -q; removed on exit, ignored in case of a hard kill.
+/.phpunit.quiet.xml
