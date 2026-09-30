@@ -1,0 +1,40 @@
+--- a/modules/text/text.install	2026-09-02 21:55:39.873507125 -0600
++++ b/modules/text/text.install	2026-09-02 21:55:39.874507132 -0600
+@@ -5,17 +5,31 @@
+  * Install functions for the text module.
+  */
+ 
++use Drupal\Core\Utility\UpdateException;
++
+ /**
+- * Implements hook_update_last_removed().
++ * Install the text_with_summary module if any field storage uses the type.
+  */
+ function text_update_12001(): void {
+   if (\Drupal::moduleHandler()->moduleExists('text_with_summary')) {
+     return;
+   }
+-  $storages = \Drupal::entityTypeManager()
+-    ->getStorage('field_storage_config')
+-    ->loadByProperties(['type' => 'text_with_summary']);
+-  if ($storages !== []) {
+-    \Drupal::service('module_installer')->install(['text_with_summary']);
++  // Inspect raw configuration instead of loading field storage entities:
++  // loading them resolves the field type plugin class, and the
++  // 'text_with_summary' plugin only exists once the module is installed.
++  $config_factory = \Drupal::configFactory();
++  $has_text_with_summary_fields = FALSE;
++  foreach ($config_factory->listAll('field.storage.') as $name) {
++    if ($config_factory->get($name)->get('type') === 'text_with_summary') {
++      $has_text_with_summary_fields = TRUE;
++      break;
++    }
++  }
++  if (!$has_text_with_summary_fields) {
++    return;
++  }
++  if (!\Drupal::service('extension.list.module')->exists('text_with_summary')) {
++    throw new UpdateException('This site has text_with_summary fields but the text_with_summary module is not in the codebase. Run "composer require drupal/text_with_summary" and then run the database updates again.');
+   }
++  \Drupal::service('module_installer')->install(['text_with_summary']);
+ }

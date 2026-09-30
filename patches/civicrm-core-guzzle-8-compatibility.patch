@@ -1,0 +1,261 @@
+--- a/CRM/Utils/GuzzleMiddleware.php
++++ b/CRM/Utils/GuzzleMiddleware.php
+@@ -224,28 +224,62 @@
+    * This logs the list of outgoing requests in curl format.
+    */
+   public static function curlLog(\Psr\Log\LoggerInterface $logger) {
++    $formatCurl = function(RequestInterface $request) {
++      $cmd = '$ curl';
++      if ($request->getMethod() !== 'GET') {
++        $cmd .= ' -X ' . escapeshellarg($request->getMethod());
++      }
++      foreach ($request->getHeaders() as $header => $lines) {
++        foreach ($lines as $line) {
++          $cmd .= ' -H ' . escapeshellarg("$header: $line");
++        }
++      }
++      $body = (string) $request->getBody();
++      if ($body !== '') {
++        $cmd .= ' -d ' . escapeshellarg($body);
++      }
++      $cmd .= ' ' . escapeshellarg((string) $request->getUri());
++      return $cmd;
++    };
++
++    if (interface_exists(\GuzzleHttp\MessageFormatterInterface::class)) {
++      $curlFmt = new class($formatCurl) implements \GuzzleHttp\MessageFormatterInterface {
++
++        /**
++         * @var callable
++         */
++        private $formatCurl;
+ 
+-    $curlFmt = new class() extends \GuzzleHttp\MessageFormatter {
++        public function __construct(callable $formatCurl) {
++          $this->formatCurl = $formatCurl;
++        }
+ 
+-      public function format(RequestInterface $request, ?ResponseInterface $response = NULL, ?\Throwable $error = NULL): string {
+-        $cmd = '$ curl';
+-        if ($request->getMethod() !== 'GET') {
+-          $cmd .= ' -X ' . escapeshellarg($request->getMethod());
++        public function format(RequestInterface $request, ?ResponseInterface $response = NULL, ?\Throwable $error = NULL): string {
++          return ($this->formatCurl)($request);
+         }
+-        foreach ($request->getHeaders() as $header => $lines) {
+-          foreach ($lines as $line) {
+-            $cmd .= ' -H ' . escapeshellarg("$header: $line");
+-          }
++
++      };
++    }
++    else {
++      // Guzzle 6 does not provide MessageFormatterInterface, and Middleware::log()
++      // requires an instance of the concrete MessageFormatter class.
++      $curlFmt = new class($formatCurl) extends \GuzzleHttp\MessageFormatter {
++
++        /**
++         * @var callable
++         */
++        private $formatCurl;
++
++        public function __construct(callable $formatCurl) {
++          $this->formatCurl = $formatCurl;
+         }
+-        $body = (string) $request->getBody();
+-        if ($body !== '') {
+-          $cmd .= ' -d ' . escapeshellarg($body);
++
++        public function format(RequestInterface $request, ?ResponseInterface $response = NULL, ?\Exception $error = NULL) {
++          return ($this->formatCurl)($request);
+         }
+-        $cmd .= ' ' . escapeshellarg((string) $request->getUri());
+-        return $cmd;
+-      }
+ 
+-    };
++      };
++    }
+ 
+     return \GuzzleHttp\Middleware::log($logger, $curlFmt);
+   }
+--- a/CRM/Core/Payment/AuthorizeNet.php
++++ b/CRM/Core/Payment/AuthorizeNet.php
+@@ -173,10 +173,7 @@
+ 
+     $response = (string) $this->getGuzzleClient()->post($this->_paymentProcessor['url_site'], [
+       'body' => implode('&', $postFields),
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     $response_fields = $this->explode_csv($response);
+@@ -310,10 +307,7 @@
+         'Content-Type' => 'text/xml; charset=UTF8',
+       ],
+       'body' => $arbXML,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ]);
+     $responseFields = $this->_ParseArbReturn((string) $response->getBody());
+ 
+@@ -558,10 +552,7 @@
+         'Content-Type' => 'text/xml; charset=UTF8',
+       ],
+       'body' => $arbXML,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     $responseFields = $this->_ParseArbReturn($response);
+@@ -611,10 +602,7 @@
+         'Content-Type' => 'text/xml; charset=UTF8',
+       ],
+       'body' => $arbXML,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     // submit to authorize.net
+@@ -668,10 +656,7 @@
+         'Content-Type' => 'text/xml; charset=UTF8',
+       ],
+       'body' => $arbXML,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     $responseFields = $this->_parseArbReturn($response);
+--- a/CRM/Core/Payment/PayPalImpl.php
++++ b/CRM/Core/Payment/PayPalImpl.php
+@@ -1265,10 +1265,7 @@
+ 
+     $response = (string) $this->getGuzzleClient()->post($url, [
+       'body' => $nvpreq,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     $result = self::deformat($response);
+--- a/ext/ewaysingle/CRM/Core/Payment/eWAY.php
++++ b/ext/ewaysingle/CRM/Core/Payment/eWAY.php
+@@ -290,10 +290,7 @@
+ 
+     $responseData = (string) $this->getGuzzleClient()->post($this->_paymentProcessor['url_site'], [
+       'body' => $requestxml,
+-      'curl' => [
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-      ],
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     //----------------------------------------------------------------------------------------------------
+--- a/ext/elavon/CRM/Core/Payment/Elavon.php
++++ b/ext/elavon/CRM/Core/Payment/Elavon.php
+@@ -165,20 +165,13 @@
+     // Convert to XML using function below
+     $xml = $this->buildXML($requestFields);
+ 
+-    // Send to the payment processor using cURL
++    // Send to the payment processor.
+ 
+     $chHost = $host . '?xmldata=' . $xml;
+-    $curlParams = [
+-      CURLOPT_RETURNTRANSFER => TRUE,
+-      CURLOPT_TIMEOUT => 36000,
+-      CURLOPT_SSL_VERIFYHOST => Civi::settings()->get('verifySSL') ? 2 : 0,
+-      CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-    ];
+-    if (ini_get('open_basedir') == '') {
+-      $curlParams[CURLOPT_FOLLOWLOCATION] = 1;
+-    }
+     $responseData = $this->getGuzzleClient()->post($chHost, [
+-      'curl' => $curlParams,
++      'allow_redirects' => TRUE,
++      'timeout' => 36000,
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ])->getBody();
+ 
+     // If gateway returned no data - tell 'em and bail out
+--- a/ext/payflowpro/CRM/Core/Payment/PayflowPro.php
++++ b/ext/payflowpro/CRM/Core/Payment/PayflowPro.php
+@@ -418,9 +418,9 @@
+   }
+ 
+   /**
+-   * Submit transaction using cURL
++   * Submit a transaction using Guzzle.
+    *
+-   * @param string $submiturl Url to direct HTTPS GET to
++   * @param string $submiturl URL to submit an HTTPS POST to
+    * @param string $payflow_query value string to be posted
+    *
+    * @return mixed|object
+@@ -430,23 +430,24 @@
+     // get data ready for API
+     $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'Guzzle';
+     // Here's your custom headers; adjust appropriately for your setup:
+-    $headers[] = "Content-Type: text/namevalue";
++    $headers['Content-Type'] = 'text/namevalue';
+     //or text/xml if using XMLPay.
+-    $headers[] = "Content-Length : " . strlen($payflow_query);
++    $headers['Content-Length'] = (string) strlen($payflow_query);
+     // Length of data to be passed
+     // Here the server timeout value is set to 45, but notice
+-    // below in the cURL section, the timeout
+-    // for cURL is 90 seconds.  You want to make sure the server
++    // below in the HTTP client options, the timeout
++    // for the client is 90 seconds.  You want to make sure the server
+     // timeout is less, then the connection.
+-    $headers[] = "X-VPS-Timeout: 45";
++    $headers['X-VPS-Timeout'] = '45';
+     //random unique number  - the transaction is retried using this transaction ID
+     // in this function but if that doesn't work and it is re- submitted
+     // it is treated as a new attempt. Payflow Pro doesn't allow
+     // you to change details (e.g. card no) when you re-submit
+     // you can only try the same details
+-    $headers[] = "X-VPS-Request-ID: " . rand(1, 1000000000);
++    $headers['X-VPS-Request-ID'] = (string) rand(1, 1000000000);
+     // optional header field
+-    $headers[] = "X-VPS-VIT-Integration-Product: CiviCRM";
++    $headers['X-VPS-VIT-Integration-Product'] = 'CiviCRM';
++    $headers['User-Agent'] = $user_agent;
+     // other Optional Headers.  If used adjust as necessary.
+     // Name of your OS
+     //$headers[] = "X-VPS-VIT-OS-Name: Linux";
+@@ -463,14 +464,8 @@
+     $response = $this->getGuzzleClient()->post($submiturl, [
+       'body' => $payflow_query,
+       'headers' => $headers,
+-      'curl' => [
+-        CURLOPT_SSL_VERIFYPEER => Civi::settings()->get('verifySSL'),
+-        CURLOPT_USERAGENT => $user_agent,
+-        CURLOPT_RETURNTRANSFER => TRUE,
+-        CURLOPT_TIMEOUT => 90,
+-        CURLOPT_SSL_VERIFYHOST => Civi::settings()->get('verifySSL') ? 2 : 0,
+-        CURLOPT_POST => TRUE,
+-      ],
++      'timeout' => 90,
++      'verify' => (bool) Civi::settings()->get('verifySSL'),
+     ]);
+ 
+     // Try to submit the transaction up to 3 times with 5 second delay.  This can be used

@@ -1,0 +1,48 @@
+diff --git a/CRM/Utils/System/Drupal8.php b/CRM/Utils/System/Drupal8.php
+index df7290e..837d1b5 100644
+--- a/CRM/Utils/System/Drupal8.php
++++ b/CRM/Utils/System/Drupal8.php
+@@ -564,9 +564,17 @@ public function logger($message, $priority = NULL) {
+    * @inheritDoc
+    */
+   public function flush() {
++    $container = \Drupal::getContainer();
++    if ($container->has('civicrm.cache_invalidator')) {
++      // The Drupal integration knows which caches depend on CiviCRM data.
++      $container->get('civicrm.cache_invalidator')->invalidate();
++      return;
++    }
++
+     // CiviCRM and Drupal both provide (different versions of) Symfony (and possibly share other classes too).
+     // If we call drupal_flush_all_caches(), Drupal will attempt to rediscover all of its classes, use Civicrm's
+-    // alternatives instead and then die. Instead, we only clear cache bins and no more.
++    // alternatives instead and then die. Older versions of the Drupal integration do not provide targeted
++    // invalidation, so retain the previous cache-bin clearing behavior as a compatibility fallback.
+     foreach (Drupal\Core\Cache\Cache::getBins() as $service_id => $cache_backend) {
+       $cache_backend->deleteAll();
+     }
+diff --git a/Civi/Core/Rebuilder.php b/Civi/Core/Rebuilder.php
+index 57e2d77..d6f7089 100644
+--- a/Civi/Core/Rebuilder.php
++++ b/Civi/Core/Rebuilder.php
+@@ -185,6 +185,8 @@ public function execute(): void {
+     }
+     if (!empty($targets['router'])) {
+       CRM_Core_Menu::store();
++      // Rebuild CMS routes only after CiviCRM's menu data has been refreshed.
++      $config->userSystem->invalidateRouteCache();
+     }
+     if (!empty($targets['navigation'])) {
+       Civi::cache('navigation')->flush();
+@@ -207,11 +209,6 @@ public function execute(): void {
+     }
+     if (!empty($targets['triggers'])) {
+       Civi::service('sql_triggers')->rebuild();
+-      // (1) Rebuild Drupal 8/9/10 route cache only if "triggerRebuild" is set to TRUE as it's
+-      // computationally very expensive and only needs to be done when routes change on the Civi-side.
+-      // For example - when uninstalling an extension. We already set "triggerRebuild" to true for these operations.
+-      // (2) FIXME: That ^^ seems silly now. Shouldn't it go under $targets['menu']?
+-      $config->userSystem->invalidateRouteCache();
+     }
+     if (!empty($targets['entities'])) {
+       CRM_Core_ManagedEntities::singleton(TRUE)->reconcile();

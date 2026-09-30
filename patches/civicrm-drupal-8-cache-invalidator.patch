@@ -1,0 +1,205 @@
+diff --git a/civicrm.services.yml b/civicrm.services.yml
+index b6ffd0d..4ac5a53 100644
+--- a/civicrm.services.yml
++++ b/civicrm.services.yml
+@@ -15,3 +15,15 @@ services:
+   civicrm.event_subscriber_registrar:
+     class: Drupal\civicrm\EventSubscriberRegistrar
+     arguments: ['@service_container', []]
++  civicrm.cache_invalidator:
++    class: Drupal\civicrm\Cache\CivicrmCacheInvalidator
++    arguments:
++      - '@cache_tags.invalidator'
++      - '@plugin.manager.block'
++      - '@plugin.manager.menu.local_task'
++    public: true
++  civicrm.cache_flush_subscriber:
++    class: Drupal\civicrm\EventSubscriber\CacheFlushSubscriber
++    arguments: ['@civicrm.cache_invalidator']
++    tags:
++      - { name: civicrm.event_subscriber }
+diff --git a/src/Cache/CivicrmCacheInvalidator.php b/src/Cache/CivicrmCacheInvalidator.php
+new file mode 100644
+index 0000000..2981290
+--- /dev/null
++++ b/src/Cache/CivicrmCacheInvalidator.php
+@@ -0,0 +1,39 @@
++<?php
++
++namespace Drupal\civicrm\Cache;
++
++use Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface;
++use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
++
++/**
++ * Invalidates Drupal caches whose contents are derived from CiviCRM data.
++ */
++class CivicrmCacheInvalidator {
++
++  /**
++   * Constructs a CiviCRM cache invalidator.
++   *
++   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cacheTagsInvalidator
++   *   The Drupal cache-tags invalidator.
++   * @param \Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface $blockManager
++   *   The block plugin manager.
++   * @param \Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface $localTaskManager
++   *   The local-task plugin manager.
++   */
++  public function __construct(
++    protected CacheTagsInvalidatorInterface $cacheTagsInvalidator,
++    protected CachedDiscoveryInterface $blockManager,
++    protected CachedDiscoveryInterface $localTaskManager,
++  ) {
++  }
++
++  /**
++   * Invalidates Drupal data which may have changed during a CiviCRM rebuild.
++   */
++  public function invalidate(): void {
++    $this->cacheTagsInvalidator->invalidateTags(['civicrm']);
++    $this->blockManager->clearCachedDefinitions();
++    $this->localTaskManager->clearCachedDefinitions();
++  }
++
++}
+diff --git a/src/EventSubscriber/CacheFlushSubscriber.php b/src/EventSubscriber/CacheFlushSubscriber.php
+new file mode 100644
+index 0000000..daa06e9
+--- /dev/null
++++ b/src/EventSubscriber/CacheFlushSubscriber.php
+@@ -0,0 +1,38 @@
++<?php
++
++namespace Drupal\civicrm\EventSubscriber;
++
++use Drupal\civicrm\Cache\CivicrmCacheInvalidator;
++use Symfony\Component\EventDispatcher\EventSubscriberInterface;
++
++/**
++ * Invalidates Drupal caches when CiviCRM clears its system caches.
++ */
++class CacheFlushSubscriber implements EventSubscriberInterface {
++
++  /**
++   * Constructs a CiviCRM cache-flush subscriber.
++   *
++   * @param \Drupal\civicrm\Cache\CivicrmCacheInvalidator $cacheInvalidator
++   *   The Drupal cache invalidator for CiviCRM-derived data.
++   */
++  public function __construct(
++    protected CivicrmCacheInvalidator $cacheInvalidator,
++  ) {
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function getSubscribedEvents(): array {
++    return ['civi.core.clearcache' => 'onClearCache'];
++  }
++
++  /**
++   * Invalidates the Drupal caches affected by CiviCRM data.
++   */
++  public function onClearCache(): void {
++    $this->cacheInvalidator->invalidate();
++  }
++
++}
+diff --git a/tests/src/Unit/Cache/CivicrmCacheInvalidatorTest.php b/tests/src/Unit/Cache/CivicrmCacheInvalidatorTest.php
+new file mode 100644
+index 0000000..001d6df
+--- /dev/null
++++ b/tests/src/Unit/Cache/CivicrmCacheInvalidatorTest.php
+@@ -0,0 +1,46 @@
++<?php
++
++namespace Drupal\Tests\civicrm\Unit\Cache;
++
++use Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface;
++use Drupal\civicrm\Cache\CivicrmCacheInvalidator;
++use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
++use Drupal\Tests\UnitTestCase;
++
++/**
++ * Tests invalidation of Drupal caches derived from CiviCRM data.
++ *
++ * @group civicrm
++ *
++ * @coversDefaultClass \Drupal\civicrm\Cache\CivicrmCacheInvalidator
++ */
++class CivicrmCacheInvalidatorTest extends UnitTestCase {
++
++  /**
++   * Tests targeted invalidation of CiviCRM-dependent Drupal caches.
++   *
++   * @covers ::invalidate
++   */
++  public function testInvalidate(): void {
++    $cache_tags_invalidator = $this->createMock(CacheTagsInvalidatorInterface::class);
++    $cache_tags_invalidator->expects($this->once())
++      ->method('invalidateTags')
++      ->with(['civicrm']);
++
++    $block_manager = $this->createMock(CachedDiscoveryInterface::class);
++    $block_manager->expects($this->once())
++      ->method('clearCachedDefinitions');
++
++    $local_task_manager = $this->createMock(CachedDiscoveryInterface::class);
++    $local_task_manager->expects($this->once())
++      ->method('clearCachedDefinitions');
++
++    $invalidator = new CivicrmCacheInvalidator(
++      $cache_tags_invalidator,
++      $block_manager,
++      $local_task_manager,
++    );
++    $invalidator->invalidate();
++  }
++
++}
+diff --git a/tests/src/Unit/EventSubscriber/CacheFlushSubscriberTest.php b/tests/src/Unit/EventSubscriber/CacheFlushSubscriberTest.php
+new file mode 100644
+index 0000000..2ed6f8f
+--- /dev/null
++++ b/tests/src/Unit/EventSubscriber/CacheFlushSubscriberTest.php
+@@ -0,0 +1,38 @@
++<?php
++
++namespace Drupal\Tests\civicrm\Unit\EventSubscriber;
++
++use Drupal\civicrm\Cache\CivicrmCacheInvalidator;
++use Drupal\civicrm\EventSubscriber\CacheFlushSubscriber;
++use Drupal\Tests\UnitTestCase;
++
++/**
++ * Tests the CiviCRM cache-flush event subscriber.
++ *
++ * @group civicrm
++ *
++ * @coversDefaultClass \Drupal\civicrm\EventSubscriber\CacheFlushSubscriber
++ */
++class CacheFlushSubscriberTest extends UnitTestCase {
++
++  /**
++   * Tests event registration and delegation to the cache invalidator.
++   *
++   * @covers ::getSubscribedEvents
++   * @covers ::onClearCache
++   */
++  public function testClearCacheEvent(): void {
++    $this->assertSame(
++      ['civi.core.clearcache' => 'onClearCache'],
++      CacheFlushSubscriber::getSubscribedEvents(),
++    );
++
++    $invalidator = $this->createMock(CivicrmCacheInvalidator::class);
++    $invalidator->expects($this->once())
++      ->method('invalidate');
++
++    $subscriber = new CacheFlushSubscriber($invalidator);
++    $subscriber->onClearCache();
++  }
++
++}

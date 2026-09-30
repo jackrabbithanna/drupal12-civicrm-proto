@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e8fd59c7108e6042fd9c41b069b83af",
+    "content-hash": "c10ff3814cd49aab7c508462b0fb99cb",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -3330,11 +3330,11 @@
         },
         {
             "name": "drupal/civicrm_entity",
-            "version": "dev-api3-to-api4",
+            "version": "5.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@git.drupal.org:project/civicrm_entity.git",
-                "reference": "a09cc9055c9495ed55cb3200db9411ed368952ab"
+                "reference": "80d7b264de0ae911647504fa952a83ea1a680ad8"
             },
             "require": {
                 "civicrm/civicrm-drupal-8": "*",
@@ -3364,7 +3364,7 @@
             ],
             "description": "Expose CiviCRM entities as Drupal entities.",
             "homepage": "http://drupal.org/project/civicrm_entity",
-            "time": "2026-09-22T16:22:21+00:00"
+            "time": "2026-09-30T14:06:28+00:00"
         },
         {
             "name": "drupal/civicrm_form_builder_blocks",
