@@ -43,7 +43,7 @@
         "civicrm/composer-compile-lib": "^0.9",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
-        "drupal/civicrm_entity": "5.0.x-dev",
+        "drupal/civicrm_entity": "dev-multi-record-custom-fields-architecture",
         "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
         "drupal/civicrm_reroute_mail": "1.0.x-dev",
         "drupal/claro": "^3.0",
