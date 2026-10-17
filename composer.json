@@ -139,6 +139,9 @@
             }
         },
         "patches": {
+            "civicrm/civicrm-drupal-8": {
+               "event subscriber weakmap": "https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-drupal-8/pull/133.patch"
+            }
         },
         "drupal-lenient": {
             "allowed-list": []
@@ -168,6 +171,7 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
         "drupal/coder": "^9.0",
+        "drupal/search_api": "^1.42",
         "phpcompatibility/php-compatibility": "^10.0@alpha",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.2",

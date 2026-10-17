@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15ea4811beeee2781289a680b8c7101a",
+    "content-hash": "a11491fac79b7538ee83989c6147f3d1",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-core.git",
-                "reference": "95d8aab787360f7a8895d0d079b7ca22d45d0c7b"
+                "reference": "ab48e9c8fecd4fea5e12d05ed4ae060a01520d31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/95d8aab787360f7a8895d0d079b7ca22d45d0c7b",
-                "reference": "95d8aab787360f7a8895d0d079b7ca22d45d0c7b",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/ab48e9c8fecd4fea5e12d05ed4ae060a01520d31",
+                "reference": "ab48e9c8fecd4fea5e12d05ed4ae060a01520d31",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1009,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-10-16T16:46:24+00:00"
+            "time": "2026-10-17T14:51:34+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -1017,12 +1017,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-drupal-8.git",
-                "reference": "4002c774a0893ae472f14c506b3cb0d9411898c2"
+                "reference": "0f7688cef9b34ed9c07e3e3f7da0740f13479269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-drupal-8/zipball/4002c774a0893ae472f14c506b3cb0d9411898c2",
-                "reference": "4002c774a0893ae472f14c506b3cb0d9411898c2",
+                "url": "https://api.github.com/repos/civicrm/civicrm-drupal-8/zipball/0f7688cef9b34ed9c07e3e3f7da0740f13479269",
+                "reference": "0f7688cef9b34ed9c07e3e3f7da0740f13479269",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1070,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-10-09T17:33:37+00:00"
+            "time": "2026-10-17T12:35:38+00:00"
         },
         {
             "name": "civicrm/civicrm-extension-plugin",
@@ -1163,16 +1163,16 @@
         },
         {
             "name": "civicrm/cli-tools",
-            "version": "v2026.10.16.1792130182",
+            "version": "v2026.10.16.1792170582",
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-cli-tools.git",
-                "reference": "fff7897980687f0bf47ec18defde9da502329ed4"
+                "reference": "a6118d7fe31f13ac7f5c2382337202ccf08608b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-cli-tools/zipball/fff7897980687f0bf47ec18defde9da502329ed4",
-                "reference": "fff7897980687f0bf47ec18defde9da502329ed4",
+                "url": "https://api.github.com/repos/civicrm/civicrm-cli-tools/zipball/a6118d7fe31f13ac7f5c2382337202ccf08608b2",
+                "reference": "a6118d7fe31f13ac7f5c2382337202ccf08608b2",
                 "shasum": ""
             },
             "require": {
@@ -1196,8 +1196,8 @@
                         "version": "0.3.72"
                     },
                     "civix.phar": {
-                        "url": "https://download.civicrm.org/civix/civix-26.10.0.phar",
-                        "version": "26.10.0"
+                        "url": "https://download.civicrm.org/civix/civix-26.10.1.phar",
+                        "version": "26.10.1"
                     },
                     "coworker.phar": {
                         "url": "https://download.civicrm.org/coworker/coworker-0.9.phar",
@@ -1221,9 +1221,9 @@
             ],
             "support": {
                 "issues": "https://github.com/civicrm/civicrm-cli-tools/issues",
-                "source": "https://github.com/civicrm/civicrm-cli-tools/tree/v2026.10.16.1792130182"
+                "source": "https://github.com/civicrm/civicrm-cli-tools/tree/v2026.10.16.1792170582"
             },
-            "time": "2026-10-16T05:56:25+00:00"
+            "time": "2026-10-16T17:09:45+00:00"
         },
         {
             "name": "civicrm/composer-compile-lib",
@@ -3399,7 +3399,7 @@
             "source": {
                 "type": "git",
                 "url": "git@git.drupal.org:project/civicrm_entity.git",
-                "reference": "86ddae8a4493e67b0d624146259304559465123b"
+                "reference": "77d802090a3a828732a5803ac03c9a580ec2d777"
             },
             "require": {
                 "civicrm/civicrm-drupal-8": "*",
@@ -3429,7 +3429,7 @@
             ],
             "description": "Expose CiviCRM entities as Drupal entities.",
             "homepage": "http://drupal.org/project/civicrm_entity",
-            "time": "2026-10-16T16:22:07+00:00"
+            "time": "2026-10-17T15:47:15+00:00"
         },
         {
             "name": "drupal/civicrm_form_builder_blocks",
@@ -3629,12 +3629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "13e66e4899afffca88cca02520f23c6ee3b5887e"
+                "reference": "178bceda51fce6244886eb17d0303640fd9a8090"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/13e66e4899afffca88cca02520f23c6ee3b5887e",
-                "reference": "13e66e4899afffca88cca02520f23c6ee3b5887e",
+                "url": "https://api.github.com/repos/drupal/core/zipball/178bceda51fce6244886eb17d0303640fd9a8090",
+                "reference": "178bceda51fce6244886eb17d0303640fd9a8090",
                 "shasum": ""
             },
             "require": {
@@ -3805,7 +3805,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-10-16T14:01:38+00:00"
+            "time": "2026-10-16T16:16:37+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -17446,6 +17446,77 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "drupal/search_api",
+            "version": "1.42.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api.git",
+                "reference": "8.x-1.42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.42.zip",
+                "reference": "8.x-1.42",
+                "shasum": "a8f18e5873f50551eadfe03c4454bcb8e85eacce"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11 || ^12"
+            },
+            "conflict": {
+                "drupal/search_api_solr": "2.* || 3.0 || 3.1"
+            },
+            "require-dev": {
+                "drupal/config_readonly": "1.x-dev",
+                "drupal/language_fallback_fix": "1.x-dev",
+                "drupal/search_api_autocomplete": "1.x-dev",
+                "drupal/search_api_db": "*"
+            },
+            "suggest": {
+                "drupal/facets": "Adds the ability to create faceted searches.",
+                "drupal/search_api_autocomplete": "Allows adding autocomplete suggestions to search fields.",
+                "drupal/search_api_solr": "Adds support for using Apache Solr as a backend."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.42",
+                    "datestamp": "1791743454",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-1.x": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Seidl",
+                    "homepage": "https://www.drupal.org/u/drunken-monkey"
+                },
+                {
+                    "name": "Nick Veenhof",
+                    "homepage": "https://www.drupal.org/u/nick_vh"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/790418/committers"
+                }
+            ],
+            "description": "Provides a generic framework for modules offering search capabilities.",
+            "homepage": "https://www.drupal.org/project/search_api",
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api",
+                "issues": "https://www.drupal.org/project/issues/search_api",
+                "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
         {
             "name": "phpcompatibility/php-compatibility",
             "version": "10.0.0-alpha2",
