@@ -1,0 +1,7 @@
+name: 'CiviCRM Subscriber Example'
+type: module
+description: 'Demonstrates a Drupal event subscriber that listens to CiviCRM Symfony events.'
+package: CiviCRM
+core_version_requirement: ^10 || ^11 || ^12
+dependencies:
+  - civicrm

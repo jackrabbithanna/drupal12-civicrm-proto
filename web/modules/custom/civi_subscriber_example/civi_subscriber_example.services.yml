@@ -1,0 +1,14 @@
+services:
+  # A dedicated logger channel so messages appear under "civi_subscriber_example".
+  logger.channel.civi_subscriber_example:
+    parent: logger.channel_base
+    arguments: ['civi_subscriber_example']
+
+  # The subscriber. Tagging it "civicrm.event_subscriber" (instead of the usual
+  # "event_subscriber") makes the civicrm module attach it to CiviCRM's own
+  # Symfony dispatcher, so it receives the events CiviCRM broadcasts.
+  civi_subscriber_example.event_subscriber:
+    class: Drupal\civi_subscriber_example\EventSubscriber\CiviExampleSubscriber
+    arguments: ['@logger.channel.civi_subscriber_example']
+    tags:
+      - { name: civicrm.event_subscriber }
