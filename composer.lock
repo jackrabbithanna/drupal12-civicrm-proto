@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a11491fac79b7538ee83989c6147f3d1",
+    "content-hash": "3748db0227e6edb54fb5b802fde4825d",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-core.git",
-                "reference": "ab48e9c8fecd4fea5e12d05ed4ae060a01520d31"
+                "reference": "4b879aa7856cf3e41639c5a6c87eac3e2b62d7ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/ab48e9c8fecd4fea5e12d05ed4ae060a01520d31",
-                "reference": "ab48e9c8fecd4fea5e12d05ed4ae060a01520d31",
+                "url": "https://api.github.com/repos/civicrm/civicrm-core/zipball/4b879aa7856cf3e41639c5a6c87eac3e2b62d7ad",
+                "reference": "4b879aa7856cf3e41639c5a6c87eac3e2b62d7ad",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1009,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-10-17T14:51:34+00:00"
+            "time": "2026-10-18T04:10:30+00:00"
         },
         {
             "name": "civicrm/civicrm-drupal-8",
@@ -1017,12 +1017,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/civicrm/civicrm-drupal-8.git",
-                "reference": "0f7688cef9b34ed9c07e3e3f7da0740f13479269"
+                "reference": "302fd29908f08a1239318e8d283d39b68b4651d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/civicrm/civicrm-drupal-8/zipball/0f7688cef9b34ed9c07e3e3f7da0740f13479269",
-                "reference": "0f7688cef9b34ed9c07e3e3f7da0740f13479269",
+                "url": "https://api.github.com/repos/civicrm/civicrm-drupal-8/zipball/302fd29908f08a1239318e8d283d39b68b4651d1",
+                "reference": "302fd29908f08a1239318e8d283d39b68b4651d1",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1070,7 @@
                     "url": "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
                 }
             ],
-            "time": "2026-10-17T12:35:38+00:00"
+            "time": "2026-10-18T04:09:56+00:00"
         },
         {
             "name": "civicrm/civicrm-extension-plugin",
@@ -3399,7 +3399,7 @@
             "source": {
                 "type": "git",
                 "url": "git@git.drupal.org:project/civicrm_entity.git",
-                "reference": "77d802090a3a828732a5803ac03c9a580ec2d777"
+                "reference": "afa629adb3a691558eaa1483391b47f54b1ae842"
             },
             "require": {
                 "civicrm/civicrm-drupal-8": "*",
@@ -3429,7 +3429,7 @@
             ],
             "description": "Expose CiviCRM entities as Drupal entities.",
             "homepage": "http://drupal.org/project/civicrm_entity",
-            "time": "2026-10-17T15:47:15+00:00"
+            "time": "2026-10-18T04:35:22+00:00"
         },
         {
             "name": "drupal/civicrm_form_builder_blocks",
@@ -3629,12 +3629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "178bceda51fce6244886eb17d0303640fd9a8090"
+                "reference": "c1be990a4794c57c5e23c64420ede9b3e729e94b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/178bceda51fce6244886eb17d0303640fd9a8090",
-                "reference": "178bceda51fce6244886eb17d0303640fd9a8090",
+                "url": "https://api.github.com/repos/drupal/core/zipball/c1be990a4794c57c5e23c64420ede9b3e729e94b",
+                "reference": "c1be990a4794c57c5e23c64420ede9b3e729e94b",
                 "shasum": ""
             },
             "require": {
@@ -3805,7 +3805,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-10-16T16:16:37+00:00"
+            "time": "2026-10-17T17:19:26+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -4963,16 +4963,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "a3059ba1a84c9139c4ae03cf0f45bea276c97c74"
+                "reference": "cdc139396207a5eba10c242d241fb014cb098390"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/a3059ba1a84c9139c4ae03cf0f45bea276c97c74",
-                "reference": "a3059ba1a84c9139c4ae03cf0f45bea276c97c74",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/cdc139396207a5eba10c242d241fb014cb098390",
+                "reference": "cdc139396207a5eba10c242d241fb014cb098390",
                 "shasum": ""
             },
             "require": {
@@ -5062,7 +5062,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/3.1.0"
+                "source": "https://github.com/guzzle/psr7/tree/3.2.0"
             },
             "funding": [
                 {
@@ -5078,7 +5078,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-24T11:02:13+00:00"
+            "time": "2026-10-17T23:57:19+00:00"
         },
         {
             "name": "justinrainbow/json-schema",

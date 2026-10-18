@@ -82,7 +82,10 @@
             "symfony/runtime": true,
             "tbachert/spi": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": {
+            "drupal/core": "source"
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -131,16 +134,19 @@
             "extensions_install_path": "./web/sites/default/files/civicrm/ext",
             "extensions": {
                 "uk.co.vedaconsulting.mosaico": {
-                    "url": "https://download.civicrm.org/extension/uk.co.vedaconsulting.mosaico/3.12.1773937815/uk.co.vedaconsulting.mosaico-3.12.1773937815.zip"
+                    "url": "https://lab.civicrm.org/extensions/mosaico/-/archive/3.14.0/mosaico-3.14.0.zip"
                 },
                 "contactlayout": {
-                    "url": "https://lab.civicrm.org/extensions/contactlayout/-/archive/3.0.4/contactlayout-3.0.4.zip"
+                    "url": "https://lab.civicrm.org/extensions/contactlayout/-/archive/3.0.5/contactlayout-3.0.5.zip"
                 }
             }
         },
         "patches": {
             "civicrm/civicrm-drupal-8": {
-               "event subscriber weakmap": "https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-drupal-8/pull/133.patch"
+               "dont boot Civi before settings file exists": "https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-drupal-8/pull/134.patch"
+            },
+            "drupal/core": {
+               "cache issue for CE D12 tests": "./patches/drupal-core-installer-kernel-module-list.patch"
             }
         },
         "drupal-lenient": {

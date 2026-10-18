@@ -1,0 +1,15 @@
+diff --git a/core/lib/Drupal/Core/Installer/InstallerKernel.php b/core/lib/Drupal/Core/Installer/InstallerKernel.php
+--- a/core/lib/Drupal/Core/Installer/InstallerKernel.php
++++ b/core/lib/Drupal/Core/Installer/InstallerKernel.php
+@@ -42,6 +42,11 @@
+       && !array_diff_key($extensions['module'] ?? [], $this->compiledExtensions['module'] ?? [])
+       && !array_diff_key($extensions['theme'] ?? [], $this->compiledExtensions['theme'] ?? [])
+     ) {
++      // DrupalKernel::rebuildContainer() empties the extension lists before
++      // calling this method. The container compiled from them is kept, so
++      // restore them, or the next reader, such as updateThemes(), gets NULL.
++      $this->moduleList ??= $extensions['module'] ?? [];
++      $this->themeList ??= $extensions['theme'] ?? [];
+       $this->containerNeedsRebuild = FALSE;
+       return $this->container;
+     }
