@@ -43,8 +43,8 @@
         "civicrm/composer-compile-lib": "^0.9",
         "composer/installers": "^2.3",
         "drupal/civicrm_drush": "^5.0@alpha",
-        "drupal/civicrm_entity": "dev-multi-record-custom-fields-architecture",
-        "drupal/civicrm_form_builder_blocks": "1.0.x-dev",
+        "drupal/civicrm_entity": "5.0.x-dev",
+        "drupal/civicrm_form_builder_blocks": "1.1.x-dev",
         "drupal/civicrm_reroute_mail": "1.0.x-dev",
         "drupal/claro": "^3.0",
         "drupal/core": "12.x-dev",
@@ -64,6 +64,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "audit": {
+            "block-insecure": false
+        },
         "allow-plugins": {
             "civicrm/civicrm-asset-plugin": true,
             "civicrm/civicrm-extension-plugin": true,
